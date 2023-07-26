@@ -1,0 +1,411 @@
+@import './mixins';
+@import './colors';
+
+*{
+    border: none;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    @include flex(space-around,center,none);
+    background: $dark85;
+    padding: 36px 0;
+    position: sticky;
+    top: 0;
+    &__logo{
+        @include Roboto(32px, 700, 32px);
+        color:$white;
+    }
+
+    .nav{
+        &__item{
+            &-link{
+                color: $white;
+            }
+        }
+    }
+
+    .social{
+        &__item{
+            &-link{
+                svg{
+                    path{
+                        fill: $white;
+                    }
+                    rect{
+                        fill: $white;
+                    }
+                }
+            }   
+        }
+       
+    }
+}
+
+.nav{
+    @include flex(center, center, 56px);
+    &__item{
+        &-link{
+            @include Lato(22px,500,22px);
+        }
+    }
+}
+
+.langBar{
+    @include flex(center, center, 4px);
+}
+
+.social{
+    @include flex(center, center, 32px);
+}
+
+.bg-photo{
+    background-image: url('../img/derek.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 100%;
+    width: 100%;
+    min-height: 964px;
+    margin-top: -119px;
+    @include flex(center, center, 0px);
+    flex-direction:column;
+
+    svg{
+        margin-top: 120px;
+    }
+}
+
+.call-to-action{
+    @include flex(center, center, 32px);
+    flex-direction: column;
+    background-color: $dark85;
+    padding: 48px;
+
+    h1{
+        @include Lora(84px, 700, 100px);
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+        width: 50%;
+    }
+
+    p{ 
+        @include Lato(24px, 400, 24px);
+        color: $white;
+    }    
+}
+
+.btn{
+    background-color: $green;
+    color: $white;
+    text-transform: uppercase;
+    @include Lato(16px, 900, 16px);
+    padding: 21px 110px;
+}
+
+.body{
+    @include flex(center, center, 34px);
+    flex-direction:column;
+}
+
+.info{
+    @include flex(center, center, 32px);
+    flex-direction:column;
+
+    &__heading{
+        @include Roboto(56px, 700, normal);
+        color:$dark;
+        text-transform: uppercase;
+        margin-top: 144px;
+    }
+  
+    &__txt{
+        @include Quicksand(20px, 500, 32px);
+        color:$dark;
+        width: 83%;
+        text-align: center;
+    }
+}
+  
+.container{
+    @include flex(center, center, 100px);
+    flex-direction: row;
+    padding: 64px 141px 124px 141px;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+      span {
+        @include Roboto(100px, 700, normal);
+        color: $green;
+        text-transform: uppercase;
+        opacity: 0.8;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -90%);
+      }
+  
+      p {
+        @include Quicksand(40px, 400, 32px);
+        color:$dark;
+        text-align: center;
+        width: 148%;
+    }
+}
+
+.bcn-content{
+    background-image: url('../img/bcn.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 100%;
+    width: 100%;
+    @include flex(center, center, 30px);
+    flex-direction: column;
+
+    h1 {
+        @include Roboto(56px, 700, normal);
+        color: $white;
+        text-transform: uppercase;
+        margin-top: 56px;
+    }
+
+    h2{
+        @include Roboto(144px, 700, 144px);
+        color: $white;
+        text-transform: uppercase; 
+    }
+
+    h3{
+        @include Quicksand(24px, 500, 18px);
+        color: $white;
+        text-transform: uppercase; 
+    }
+
+    p{
+        @include Quicksand(24px, 400, 32px);
+        color: $white;
+        text-align: center;
+        width: 85%;
+    }
+
+    span {
+        @include Quicksand(28px, 500, 32px);
+        text-transform: uppercase;
+        color: $white;
+    }
+
+    button {
+        @include Quicksand(20px, 700, 18px);
+        padding: 19px 50px;
+        background-color: $green;
+        color: $white;
+        margin-bottom: 106px;
+    }
+}
+
+.popways{
+
+    &__title{
+        @include Roboto (56px, 700, normal);
+        color: $dark;
+        text-transform: uppercase; 
+        text-align: center;
+        margin-top: 124px;
+    }
+}   
+
+.block{
+    @include flex(center, center, 40px);
+    flex-direction: row;
+    padding: 40px 40px 50px 40px;
+}
+
+.card{
+    &__text{
+        @include Roboto (18px, 400, 18px);
+        color: $white;
+        background-color: $dark85;
+        padding: 5px 8px;
+        top: 8px;
+    }
+
+    img{
+        min-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.add{
+    @include flex(center, center, 8px);
+    flex-direction: column;
+    margin-bottom: 72px;
+
+    .btn {
+        @include Quicksand (20px, 700, 18px);
+        color: $white;
+        background-color: $green;
+        padding: 19px 62px;
+    
+        &__text {
+            @include Quicksand (14px, 500, 18px);
+            color: $dark;
+        }
+    }    
+}
+
+.travstor{
+    background-image: url('../img/fish.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $green40;
+    min-width: 100%;
+    width: 100%;
+    min-height: 560px;
+
+    &__title {
+        @include Roboto (56px, 700, normal);
+        color: $white;
+        text-transform: uppercase; 
+        text-align: center;
+        padding: 48px 0 32px 0;
+    }
+}
+
+.cards{
+    @include flex(center, center, 80px);
+    flex-direction: row;
+    padding: 0px 40px 0px 40px;
+}
+
+.photo1{
+    @include flex(center, center, none);
+    flex-direction: column;
+    position: relative;
+
+    .text {
+        @include Lato (14px, 500, normal);
+        color: $white; 
+        background-color: $dark85;
+        padding: 4px 8px;
+        position: absolute;
+        top: 8px;
+        left: 16px;
+    }
+  
+    img {
+        min-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    svg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+.photo2{
+    @include flex(center, center, none);
+    flex-direction: column;
+    position: relative;
+
+    .text {
+        @include Lato (14px, 500, normal);
+        color: $white;
+        background-color: $dark85;
+        padding: 4px 8px;
+        position: absolute;
+        top: 8px;
+        left: 16px;
+    }
+      
+    img {
+        min-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+    
+    svg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.photo3{
+    @include flex(center, center, none);
+    flex-direction: column;
+    position: relative;
+                
+    .text {
+        @include Lato (14px, 500, normal);
+        color: $white;
+        background-color: $dark85;
+        padding: 4px 8px;
+        position: absolute;
+        top: 8px;
+        left: 16px;
+    }
+          
+    img {
+        min-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+        
+    svg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+}
+
+.footer{
+    @include flex(space-around,center,none);
+    background: url('../img/Mountains.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 96px 0;
+    &__logo{
+        @include Roboto(32px, 700, 32px);
+        color: $dark;
+    }
+
+    .nav{
+        &__item{
+            &-link{
+                color: $dark;
+            }
+        }
+    }
+
+    .social{
+        &__item{
+            &-link{
+                svg{
+                    path{
+                        fill: $dark;
+                    }
+                    rect{
+                        fill: $dark;
+                    }
+                }
+            }   
+        }
+       
+    }
+}
